@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyan Sahitya - Recycle Knowledge. Empower Minds.</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Use Inter font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        /* Custom Green for sustainability theme */
+        .color-primary { background-color: #10B981; } /* Emerald Green */
+        .color-text { color: #059669; } /* Darker Emerald */
+        .shadow-green-md { box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1), 0 2px 4px -2px rgba(16, 185, 129, 0.1); }
+        .cta-button {
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3), 0 4px 6px -4px rgba(16, 185, 129, 0.3);
+        }
+        .listing-card {
+            transition: all 0.2s ease-in-out;
+        }
+        .listing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold color-text">Gyan Sahitya</h1>
+            <nav class="hidden md:flex space-x-6 text-gray-600 font-medium">
+                <a href="#hero" class="hover:text-green-600 transition">Home</a>
+                <a href="#marketplace" class="hover:text-green-600 transition">Marketplace</a>
+                <a href="#impact" class="hover:text-green-600 transition">Community</a>
+                <a href="#blog" class="hover:text-green-600 transition">Blog</a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <button id="login-button" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition font-semibold">
+                    Login/Signup
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login/Signup Modal (Mock-up) -->
+    <div id="login-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-[100] flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md">
+            <h3 class="text-2xl font-bold mb-6 color-text">Join Gyan Sahitya</h3>
+            <div class="space-y-4">
+                <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500">
+                <input type="password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500">
+                <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500">
+                    <option>Role Selection: Buyer</option>
+                    <option>Role Selection: Seller</option>
+                    <option>Role Selection: Educator</option>
+                </select>
+                <div class="flex items-center">
+                    <input type="checkbox" id="verification" class="rounded text-green-600 focus:ring-green-500">
+                    <label for="verification" class="ml-2 text-sm text-gray-600">Optional: Student/Faculty Verification</label>
+                </div>
+            </div>
+            <button class="w-full mt-6 px-4 py-3 color-primary text-white rounded-xl font-bold cta-button">
+                Sign Up / Log In
+            </button>
+            <button id="close-modal" class="mt-4 text-sm text-gray-500 hover:text-gray-700 w-full">Close</button>
+        </div>
+    </div>
+
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="bg-gradient-to-br from-green-50 to-green-100 py-24 sm:py-32 px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-5xl sm:text-7xl font-extrabold mb-4 leading-tight color-text">
+                    Recycle Knowledge. Empower Minds.
+                </h2>
+                <p class="text-xl sm:text-2xl text-gray-600 mb-10">
+                    A sustainable marketplace for **textbooks, notes, and educational tools**.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#marketplace" class="cta-button px-8 py-4 bg-green-600 text-white font-bold rounded-xl shadow-green-md hover:bg-green-700 transition">
+                        Start Buying
+                    </a>
+                    <a href="#post-item" class="cta-button px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl shadow-lg hover:bg-indigo-700 transition">
+                        Sell Your Materials
+                    </a>
+                    <a href="#about" class="cta-button px-8 py-4 bg-white text-green-600 border border-green-600 font-bold rounded-xl shadow-md hover:bg-gray-50 transition">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About the Platform / Mission -->
+        <section id="about" class="py-20 px-4 bg-white">
+            <div class="max-w-7xl mx-auto text-center">
+                <span class="text-sm font-semibold uppercase tracking-wider text-green-500">Our Mission</span>
+                <h3 class="text-4xl font-bold mt-2 mb-8 text-gray-800">
+                    The Sustainable Future of Learning
+                </h3>
+                <div class="max-w-3xl mx-auto text-xl text-gray-600 space-y-4">
+                    <p>
+                        Gyan Sahitya was founded on a simple, powerful philosophy: **Reduce waste. Reuse knowledge. Rethink education.**
+                    </p>
+                    <p>
+                        We solve the twin problems of educational affordability and environmental sustainability by creating a trusted, community-verified platform. Instead of letting costly textbooks and essential tools gather dust or end up in a landfill, we give them a second life, making education more accessible for students everywhere.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Marketplace Section (Search & Listings) -->
+        <section id="marketplace" class="py-20 px-4 bg-gray-50">
+            <div class="max-w-7xl mx-auto">
+                <h3 class="text-3xl font-bold mb-10 text-center color-text">The Global Knowledge Exchange</h3>
+
+                <!-- Dynamic Search and Filter Mock-up -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg mb-12 border border-green-200">
+                    <h4 class="text-xl font-semibold mb-4 text-gray-700">Find Your Materials:</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                        <select class="col-span-2 md:col-span-1 p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500">
+                            <option>Subject (All)</option>
+                            <option>Science</option>
+                            <option>Humanities</option>
+                            <option>Engineering</option>
+                            <option>Business</option>
+                        </select>
+                        <select class="col-span-2 md:col-span-1 p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500">
+                            <option>Course (Any)</option>
+                            <option>Calculus I</option>
+                            <option>World History</option>
+                            <option>Intro to Python</option>
+                        </select>
+                        <input type="text" placeholder="Location (City/Zip)" class="col-span-2 md:col-span-1 p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500">
+                        <select class="col-span-1 p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500">
+                            <option>Max Price</option>
+                            <option>$10</option>
+                            <option>$50</option>
+                            <option>$100+</option>
+                        </select>
+                        <button class="col-span-1 px-4 py-3 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition">
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Listings -->
+                <h4 class="text-2xl font-bold mb-6 text-gray-800">Featured Listings</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Listing Card 1: Used Textbook -->
+                    <div class="listing-card bg-white p-5 rounded-xl shadow-md border-t-4 border-green-600">
+                        <p class="text-sm font-semibold text-green-600 mb-1">Used Textbooks</p>
+                        <h5 class="text-lg font-bold mb-2">Organic Chemistry (9th Ed.)</h5>
+                        <p class="text-gray-500 text-sm mb-4">Condition: Good. Some highlighting.</p>
+                        <img src="https://placehold.co/400x250/d1fae5/065f46?text=Textbook" onerror="this.src='https://placehold.co/400x250/d1fae5/065f46?text=Textbook'" alt="Textbook Placeholder" class="w-full h-32 object-cover rounded-lg mb-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-extrabold text-indigo-600">$45.00</span>
+                            <button class="text-sm px-3 py-1 bg-indigo-500 text-white rounded-full hover:bg-indigo-600">Buy Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Listing Card 2: Notes/Guides -->
+                    <div class="listing-card bg-white p-5 rounded-xl shadow-md border-t-4 border-blue-600">
+                        <p class="text-sm font-semibold text-blue-600 mb-1">Notes/Guides</p>
+                        <h5 class="text-lg font-bold mb-2">Advanced Econometrics Study Guide</h5>
+                        <p class="text-gray-500 text-sm mb-4">Condition: Excellent. Professor's key points.</p>
+                        <img src="https://placehold.co/400x250/eff6ff/1e40af?text=Notes" onerror="this.src='https://placehold.co/400x250/eff6ff/1e40af?text=Notes'" alt="Notes Placeholder" class="w-full h-32 object-cover rounded-lg mb-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-extrabold text-indigo-600">$12.50</span>
+                            <button class="text-sm px-3 py-1 bg-indigo-500 text-white rounded-full hover:bg-indigo-600">Download</button>
+                        </div>
+                    </div>
+
+                    <!-- Listing Card 3: Scientific Instruments -->
+                    <div class="listing-card bg-white p-5 rounded-xl shadow-md border-t-4 border-red-600">
+                        <p class="text-sm font-semibold text-red-600 mb-1">Scientific Instruments</p>
+                        <h5 class="text-lg font-bold mb-2">Texas Instruments TI-84 Plus</h5>
+                        <p class="text-gray-500 text-sm mb-4">Condition: Used. Works perfectly. Case included.</p>
+                        <img src="https://placehold.co/400x250/fee2e2/991b1b?text=Instrument" onerror="this.src='https://placehold.co/400x250/fee2e2/991b1b?text=Instrument'" alt="Instrument Placeholder" class="w-full h-32 object-cover rounded-lg mb-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-extrabold text-indigo-600">$70.00</span>
+                            <button class="text-sm px-3 py-1 bg-indigo-500 text-white rounded-full hover:bg-indigo-600">Buy Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Listing Card 4: Digital Resources -->
+                    <div class="listing-card bg-white p-5 rounded-xl shadow-md border-t-4 border-yellow-600">
+                        <p class="text-sm font-semibold text-yellow-600 mb-1">Digital Resources</p>
+                        <h5 class="text-lg font-bold mb-2">CS 101 Lecture Slide Deck (PDF)</h5>
+                        <p class="text-gray-500 text-sm mb-4">Condition: Digital. Fully updated for 2024.</p>
+                        <img src="https://placehold.co/400x250/fef3c7/b45309?text=Digital+Resource" onerror="this.src='https://placehold.co/400x250/fef3c7/b45309?text=Digital+Resource'" alt="Digital Resource Placeholder" class="w-full h-32 object-cover rounded-lg mb-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-extrabold text-indigo-600">FREE / Trade</span>
+                            <button class="text-sm px-3 py-1 bg-indigo-500 text-white rounded-full hover:bg-indigo-600">Access</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Post an Item Callout -->
+        <section id="post-item" class="py-20 px-4 bg-indigo-700">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-4xl font-extrabold text-white mb-4">
+                    Got old materials? Turn them into opportunity.
+                </h3>
+                <p class="text-xl text-indigo-200 mb-8">
+                    Use our easy upload form to list your used educational items. Choose to **sell, donate, or trade**—it’s up to you.
+                </p>
+                <a href="#" class="cta-button px-10 py-4 bg-white text-indigo-700 font-bold rounded-xl shadow-lg hover:bg-gray-100 transition">
+                    Start Listing Now
+                </a>
+            </div>
+        </section>
+
+        <!-- 5. Community & Impact -->
+        <section id="impact" class="py-20 px-4 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <span class="text-sm font-semibold uppercase tracking-wider text-indigo-500 text-center block">Making a Difference</span>
+                <h3 class="text-4xl font-bold mt-2 mb-12 text-center text-gray-800">
+                    Our Impact on the Planet and Peers
+                </h3>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
+                    <div class="p-6 rounded-xl bg-green-50 border border-green-200">
+                        <p class="text-5xl font-extrabold color-text">5,800+</p>
+                        <p class="text-lg font-medium text-gray-600 mt-2">Items Recycled</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-green-50 border border-green-200">
+                        <p class="text-5xl font-extrabold color-text">2.5 Tons</p>
+                        <p class="text-lg font-medium text-gray-600 mt-2">Estimated CO₂ Saved</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-green-50 border border-green-200">
+                        <p class="text-5xl font-extrabold color-text">9,100+</p>
+                        <p class="text-lg font-medium text-gray-600 mt-2">Student Beneficiaries</p>
+                    </div>
+                </div>
+
+                <!-- User Story -->
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg border-l-8 border-indigo-600">
+                    <h4 class="text-xl font-bold mb-4 text-indigo-600">User Story: A Student's Perspective</h4>
+                    <p class="text-gray-700 italic">
+                        "I saved nearly $300 on textbooks this semester using Gyan Sahitya, and I found a rare geology field guide that wasn't available anywhere else. It’s not just about saving money; it’s about participating in a community that cares about resources. Gyan Sahitya made my education sustainable and affordable."
+                    </p>
+                    <p class="mt-4 text-right font-semibold text-gray-500">— Anjali S., University Student</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. Sustainability & Education Blog Callout -->
+        <section id="blog" class="py-20 px-4 bg-gray-100">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-sm font-semibold uppercase tracking-wider text-green-600">Blog & Resources</span>
+                        <h3 class="text-4xl font-bold mt-2 mb-4 text-gray-800">
+                            Sustainability & Student Hacks
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Read our latest articles on eco-friendly study habits, finding textbook alternatives, and expert tips for maximizing your learning without breaking the bank.
+                        </p>
+                        <ul class="space-y-3 text-gray-700 list-disc list-inside">
+                            <li>Article: The True Cost of New Textbooks</li>
+                            <li>Guide: 5 Ways to Make Your Study Routine Sustainable</li>
+                            <li>Tips: Getting the best price when selling your gear</li>
+                        </ul>
+                        <a href="#" class="mt-8 inline-block px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition">
+                            Visit the Blog
+                        </a>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-xl">
+                         <img src="https://placehold.co/600x400/ccfbf1/064e3b?text=Eco-Friendly+Learning" onerror="this.src='https://placehold.co/600x400/ccfbf1/064e3b?text=Eco-Friendly+Learning'" alt="Eco-Friendly Learning Placeholder" class="w-full rounded-lg mb-4">
+                         <p class="text-md font-semibold text-gray-700">How Gyan Sahitya is Redefining the Used Textbook Market</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+                <h5 class="text-xl font-bold mb-4 text-green-400">Gyan Sahitya</h5>
+                <p class="text-sm text-gray-400">Recycle Knowledge. Empower Minds.</p>
+                <p class="text-sm text-gray-400 mt-4">&copy; 2024 All rights reserved.</p>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-3 text-green-400">Marketplace</h5>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-white">Textbooks</a></li>
+                    <li><a href="#" class="hover:text-white">Digital Resources</a></li>
+                    <li><a href="#" class="hover:text-white">Post an Item</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-3 text-green-400">About Us</h5>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#about" class="hover:text-white">Our Mission</a></li>
+                    <li><a href="#impact" class="hover:text-white">Impact Report</a></li>
+                    <li><a href="#blog" class="hover:text-white">Careers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-3 text-green-400">Support</h5>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-white">FAQ</a></li>
+                    <li><a href="#" class="hover:text-white">Contact</a></li>
+                    <li><a href="#" class="hover:text-white">Terms & Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Modal Interaction
+        const loginButton = document.getElementById('login-button');
+        const closeModalButton = document.getElementById('close-modal');
+        const loginModal = document.getElementById('login-modal');
+
+        // Show the modal
+        loginButton.addEventListener('click', () => {
+            loginModal.classList.remove('hidden');
+        });
+
+        // Hide the modal
+        closeModalButton.addEventListener('click', () => {
+            loginModal.classList.add('hidden');
+        });
+
+        // Hide the modal if clicked outside
+        loginModal.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
